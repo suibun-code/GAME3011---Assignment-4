@@ -74,6 +74,7 @@ public class PieceManager : MonoBehaviour
         piecesToPlace = CreatePieces(grid);
 
         PlacePieces(piecesToPlace, grid);
+
     }
 
     private List<Piece> CreatePieces(Grid grid)

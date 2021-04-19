@@ -31,7 +31,7 @@ public class Piece : MonoBehaviour
 
     protected void Update()
     {
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 3f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 0.01f);
 
         connectedPieces = new List<Piece>();
 
@@ -92,8 +92,16 @@ public class Piece : MonoBehaviour
             }
 
             if (connected)
+            {
+                currentCell.mOutlineImage.color = new Color(0.07f, 1f, 0f, 0.47f);
+
                 foreach (Piece piece in connectedPieces)
                     piece.connected = true;
+            }
+            else
+            {
+                currentCell.mOutlineImage.color = currentCell.originalColor;
+            }
         }
     }
 

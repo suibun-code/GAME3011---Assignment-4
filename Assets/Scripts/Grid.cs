@@ -28,36 +28,41 @@ public class Grid : MonoBehaviour
 
     public void Init()
     {
+        int count = 0;
+        int num = 2;
+
         OnAfterDeserialize();
-        Debug.Log(cellSizeX);
 
         allCells = new Cell[cellSizeX, cellSizeY];
 
         for (int i = 0; i < cellSizeX; i++)
-        {
             for (int j = 0; j < cellSizeY; j++)
             {
+                num++;
+
                 GameObject newCell = Instantiate(cellPrefab, transform);
 
                 RectTransform rectTransform = newCell.GetComponent<RectTransform>();
                 rectTransform.anchoredPosition = new Vector3(j * 100f, i * 100f);
 
+                allCells[j, i] = newCell.GetComponent<Cell>();
+
                 //Debug.Log("I: " + i + " J: " + j);
 
-                allCells[j, i] = newCell.GetComponent<Cell>();
+                if (count == cellSizeX)
+                {
+                    num++;
+                    count = 0;
+                }
+
+                Debug.Log(num);
+
+                if (num % 2 == 0)
+                    allCells[j, i].GetComponent<Image>().color = new Color32(0, 198, 255, 120);
+
                 allCells[j, i].Setup(new Vector2Int(j, i), this);
-            }
-        }
 
-        for (int i = 0; i < cellSizeX; i += 2)
-        {
-            for (int j = 0; j < cellSizeY; j++)
-            {
-                int offset = (j % 2 != 0) ? 0 : 1;
-                int finalX = i + offset;
-
-                allCells[finalX, j].GetComponent<Image>().color = new Color32(0, 198, 255, 120);
+                count++;
             }
-        }
     }
 }

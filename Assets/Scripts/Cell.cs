@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Cell : MonoBehaviour
 {
     public Image mOutlineImage;
+    public Color originalColor;
     public Piece currentPiece;
     public Vector2Int gridPosition = Vector2Int.zero;
     public Grid grid = null;
@@ -16,6 +17,9 @@ public class Cell : MonoBehaviour
         gridPosition = newGridPosition;
         grid = newGrid;
 
+        mOutlineImage = GetComponent<Image>();
         rectTransform = GetComponent<RectTransform>();
+
+        originalColor = mOutlineImage.color;
     }
 }
