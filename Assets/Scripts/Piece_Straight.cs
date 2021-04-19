@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Piece_L : Piece
+public class Piece_Straight : Piece
 {
     // Start is called before the first frame update
     void Start()
@@ -11,12 +11,12 @@ public class Piece_L : Piece
         base.Start();
 
         up = true;
-        right = true;
+        down = true;
 
-        down = false;
+        right = false;
         left = false;
 
-        GetComponent<Image>().sprite = Resources.Load<Sprite>("L");
+        GetComponent<Image>().sprite = Resources.Load<Sprite>("STRAIGHT");
     }
 
     // Update is called once per frame

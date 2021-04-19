@@ -11,12 +11,16 @@ public class Piece : MonoBehaviour
     public bool down = false;
     public bool left = false;
 
+    public bool connected = false;
+
     [SerializeField] protected Cell currentCell = null;
     protected RectTransform rectTransform = null;
     protected PieceManager pieceManager;
     Quaternion targetRotation = Quaternion.identity;
 
     [SerializeField] private Button button;
+
+    [SerializeField] public List<Piece> connectedPieces;
 
     protected void Start()
     {
@@ -28,9 +32,72 @@ public class Piece : MonoBehaviour
     protected void Update()
     {
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 3f);
+
+        connectedPieces = new List<Piece>();
+
+        if (Manager.gridFinished)
+        {
+            Piece pieceConnected;
+
+            if (currentCell.gridPosition.y + 1 < Grid.cellSizeY)
+            {
+                if (up == true)
+                {
+                    pieceConnected = currentCell.grid.allCells[currentCell.gridPosition.x, currentCell.gridPosition.y + 1].currentPiece;
+
+                    if (pieceConnected.down == true)
+                    {
+                        connectedPieces.Add(pieceConnected);
+                    }
+                }
+            }
+
+            if (currentCell.gridPosition.x + 1 < Grid.cellSizeX)
+            {
+                if (right == true)
+                {
+                    pieceConnected = currentCell.grid.allCells[currentCell.gridPosition.x + 1, currentCell.gridPosition.y].currentPiece;
+
+                    if (pieceConnected.left == true)
+                    {
+                        connectedPieces.Add(pieceConnected);
+                    }
+                }
+            }
+
+            if (currentCell.gridPosition.y - 1 >= 0)
+            {
+                if (down == true)
+                {
+                    pieceConnected = currentCell.grid.allCells[currentCell.gridPosition.x, currentCell.gridPosition.y - 1].currentPiece;
+
+                    if (pieceConnected.up == true)
+                    {
+                        connectedPieces.Add(pieceConnected);
+                    }
+                }
+            }
+
+            if (currentCell.gridPosition.x - 1 >= 0)
+            {
+                if (left == true)
+                {
+                    pieceConnected = currentCell.grid.allCells[currentCell.gridPosition.x - 1, currentCell.gridPosition.y].currentPiece;
+
+                    if (pieceConnected.right == true)
+                    {
+                        connectedPieces.Add(pieceConnected);
+                    }
+                }
+            }
+
+            if (connected)
+                foreach (Piece piece in connectedPieces)
+                    piece.connected = true;
+        }
     }
 
-    public void Setup(PieceManager newPieceManager)
+    public virtual void Setup(PieceManager newPieceManager)
     {
         pieceManager = newPieceManager;
 
@@ -59,6 +126,11 @@ public class Piece : MonoBehaviour
         right = up2;
         down = right2;
         left = down2;
+
+        foreach (Cell cell in currentCell.grid.allCells)
+        {
+            cell.currentPiece.connected = false;
+        }
     }
 
     public void RotateCCW()

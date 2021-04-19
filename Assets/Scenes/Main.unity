@@ -236,7 +236,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -667,6 +667,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PieceManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8631885974464570744, guid: a33f05d5f9deaf14fad9f8df0c8d61e6, type: 3}
+      propertyPath: piecePrefab
+      value: 
+      objectReference: {fileID: 7241687263450637166, guid: 9112a4dad856ed44f9776dd36c357661, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a33f05d5f9deaf14fad9f8df0c8d61e6, type: 3}
 --- !u!224 &6962405892569217938 stripped

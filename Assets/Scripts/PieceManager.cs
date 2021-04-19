@@ -13,22 +13,28 @@ public class PieceManager : MonoBehaviour
     {
         L_Piece,
         Straight_Piece,
-        TRI_Piece
+        TRI_Piece,
+        START_PIECE,
+        END_PIECE
     }
 
     private int[] pieceOrder = new int[36]
     {
-        (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
-        (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
-        (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
-        (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
-        (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
+        (int) p.START_PIECE, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.TRI_Piece, (int) p.L_Piece,
+        (int) p.TRI_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.Straight_Piece, (int) p.L_Piece, (int) p.L_Piece,
+        (int) p.L_Piece, (int) p.L_Piece, (int) p.TRI_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
+        (int) p.Straight_Piece, (int) p.L_Piece, (int) p.Straight_Piece, (int) p.L_Piece, (int) p.END_PIECE, (int) p.L_Piece,
+        (int) p.Straight_Piece, (int) p.TRI_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
         (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece
     };
 
     private Dictionary<int, Type> pieceLibrary = new Dictionary<int, Type>()
     {
-        {(int) p.L_Piece, typeof(Piece_L)}
+        {(int) p.L_Piece, typeof(Piece_L)},
+        {(int) p.Straight_Piece, typeof(Piece_Straight)},
+        {(int) p.TRI_Piece, typeof(Piece_Tri)},
+        {(int) p.START_PIECE, typeof(Piece_Start)},
+        {(int) p.END_PIECE, typeof(Piece_End)}
     };
 
     public void Init(Grid grid)

@@ -34,7 +34,7 @@ public class Grid : MonoBehaviour
                 int offset = (j % 2 != 0) ? 0 : 1;
                 int finalX = i + offset;
 
-                allCells[finalX, j].GetComponent<Image>().color = new Color32(175, 175, 175, 25);
+                allCells[finalX, j].GetComponent<Image>().color = new Color32(0, 198, 255, 120);
             }
         }
     }
