@@ -32,32 +32,32 @@ public class PieceManager : MonoBehaviour
 
     private int[] pieceOrder2 = new int[64]
     {
-        (int) p.TRI_Piece, (int) p.TRI_Piece, (int) p.TRI_Piece, (int) p.L_Piece, (int) p.TRI_Piece, (int) p.L_Piece, (int) p.TRI_Piece, (int) p.L_Piece,
-        (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.TRI_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.TRI_Piece, (int) p.Straight_Piece,
-        (int) p.Straight_Piece, (int) p.TRI_Piece, (int) p.TRI_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.END_PIECE, (int) p.TRI_Piece,
-        (int) p.TRI_Piece, (int) p.Straight_Piece, (int) p.L_Piece, (int) p.TRI_Piece, (int) p.Straight_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
-        (int) p.L_Piece, (int) p.START_PIECE, (int) p.TRI_Piece, (int) p.Straight_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
-        (int) p.TRI_Piece, (int) p.L_Piece, (int) p.Straight_Piece, (int) p.L_Piece, (int) p.TRI_Piece, (int) p.Straight_Piece, (int) p.L_Piece, (int) p.Straight_Piece,
-        (int) p.L_Piece, (int) p.TRI_Piece, (int) p.Straight_Piece, (int) p.Straight_Piece, (int) p.L_Piece, (int) p.TRI_Piece, (int) p.TRI_Piece, (int) p.L_Piece,
-        (int) p.TRI_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.Straight_Piece, (int) p.L_Piece, (int) p.Straight_Piece, (int) p.L_Piece,
+        (int) p.TRI_Piece,      (int) p.TRI_Piece,      (int) p.TRI_Piece,      (int) p.L_Piece,        (int) p.TRI_Piece,      (int) p.L_Piece,        (int) p.TRI_Piece,      (int) p.L_Piece,
+        (int) p.L_Piece,        (int) p.L_Piece,        (int) p.L_Piece,        (int) p.TRI_Piece,      (int) p.L_Piece,        (int) p.L_Piece,        (int) p.TRI_Piece,      (int) p.Straight_Piece,
+        (int) p.Straight_Piece, (int) p.TRI_Piece,      (int) p.TRI_Piece,      (int) p.L_Piece,        (int) p.L_Piece,        (int) p.L_Piece,        (int) p.END_PIECE,      (int) p.TRI_Piece,
+        (int) p.TRI_Piece,      (int) p.Straight_Piece, (int) p.L_Piece,        (int) p.TRI_Piece,      (int) p.Straight_Piece, (int) p.L_Piece,        (int) p.L_Piece,        (int) p.L_Piece,
+        (int) p.L_Piece,        (int) p.START_PIECE,    (int) p.TRI_Piece,      (int) p.Straight_Piece, (int) p.L_Piece,        (int) p.L_Piece,        (int) p.L_Piece,        (int) p.L_Piece,
+        (int) p.TRI_Piece,      (int) p.L_Piece,        (int) p.Straight_Piece, (int) p.L_Piece,        (int) p.TRI_Piece,      (int) p.Straight_Piece, (int) p.L_Piece,        (int) p.Straight_Piece,
+        (int) p.L_Piece,        (int) p.TRI_Piece,      (int) p.Straight_Piece, (int) p.Straight_Piece, (int) p.L_Piece,        (int) p.TRI_Piece,      (int) p.TRI_Piece,      (int) p.L_Piece,
+        (int) p.TRI_Piece,      (int) p.L_Piece,        (int) p.L_Piece,        (int) p.L_Piece,        (int) p.Straight_Piece, (int) p.L_Piece,        (int) p.Straight_Piece, (int) p.L_Piece,
     };
 
     private int[] pieceOrder3 = new int[196]
     {
-        (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
-        (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
-        (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
-        (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
-        (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
-        (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
-        (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
-        (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
-        (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
-        (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
-        (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
-        (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
-        (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
-        (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece
+        (int) p.TRI_Piece,      (int) p.TRI_Piece,      (int) p.TRI_Piece,      (int) p.L_Piece,        (int) p.TRI_Piece,      (int) p.L_Piece,        (int) p.TRI_Piece,      (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
+        (int) p.L_Piece,        (int) p.L_Piece,        (int) p.L_Piece,        (int) p.TRI_Piece,      (int) p.L_Piece,        (int) p.L_Piece,        (int) p.TRI_Piece,      (int) p.Straight_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
+        (int) p.Straight_Piece, (int) p.TRI_Piece,      (int) p.TRI_Piece,      (int) p.L_Piece,        (int) p.L_Piece,        (int) p.L_Piece,        (int) p.END_PIECE,      (int) p.TRI_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
+        (int) p.TRI_Piece,      (int) p.Straight_Piece, (int) p.L_Piece,        (int) p.TRI_Piece,      (int) p.Straight_Piece, (int) p.L_Piece,        (int) p.L_Piece,        (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
+        (int) p.L_Piece,        (int) p.L_Piece,   (int) p.TRI_Piece,      (int) p.Straight_Piece, (int) p.L_Piece,        (int) p.L_Piece,        (int) p.L_Piece,        (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
+        (int) p.TRI_Piece,      (int) p.L_Piece,        (int) p.Straight_Piece, (int) p.L_Piece,        (int) p.TRI_Piece,      (int) p.Straight_Piece, (int) p.L_Piece,        (int) p.Straight_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
+        (int) p.L_Piece,        (int) p.TRI_Piece,      (int) p.Straight_Piece, (int) p.Straight_Piece, (int) p.L_Piece,        (int) p.TRI_Piece,      (int) p.TRI_Piece,      (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
+        (int) p.TRI_Piece,      (int) p.L_Piece,        (int) p.L_Piece,        (int) p.L_Piece,        (int) p.Straight_Piece, (int) p.L_Piece,        (int) p.Straight_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
+        (int) p.TRI_Piece,      (int) p.TRI_Piece,      (int) p.TRI_Piece,      (int) p.L_Piece,        (int) p.TRI_Piece,      (int) p.L_Piece,        (int) p.TRI_Piece,     (int) p.TRI_Piece,      (int) p.TRI_Piece,      (int) p.TRI_Piece,      (int) p.L_Piece,        (int) p.TRI_Piece,      (int) p.L_Piece,        (int) p.TRI_Piece,
+        (int) p.L_Piece,        (int) p.L_Piece,        (int) p.L_Piece,        (int) p.TRI_Piece,      (int) p.L_Piece,        (int) p.L_Piece,        (int) p.TRI_Piece,     (int) p.L_Piece,        (int) p.L_Piece,        (int) p.L_Piece,        (int) p.TRI_Piece,      (int) p.L_Piece,        (int) p.L_Piece,        (int) p.TRI_Piece,
+        (int) p.Straight_Piece, (int) p.TRI_Piece,      (int) p.TRI_Piece,      (int) p.L_Piece,        (int) p.L_Piece,        (int) p.L_Piece,        (int) p.L_Piece,     (int) p.Straight_Piece, (int) p.TRI_Piece,      (int) p.TRI_Piece,      (int) p.L_Piece,        (int) p.L_Piece,        (int) p.L_Piece,        (int) p.L_Piece,
+        (int) p.TRI_Piece,      (int) p.Straight_Piece, (int) p.L_Piece,        (int) p.TRI_Piece,      (int) p.Straight_Piece, (int) p.L_Piece,        (int) p.L_Piece,       (int) p.TRI_Piece,      (int) p.Straight_Piece, (int) p.L_Piece,        (int) p.TRI_Piece,      (int) p.Straight_Piece, (int) p.L_Piece,        (int) p.L_Piece,
+        (int) p.L_Piece,        (int) p.L_Piece,    (int) p.TRI_Piece,      (int) p.Straight_Piece, (int) p.L_Piece,        (int) p.L_Piece,        (int) p.L_Piece,       (int) p.L_Piece,        (int) p.START_PIECE,    (int) p.TRI_Piece,      (int) p.Straight_Piece, (int) p.L_Piece,        (int) p.L_Piece,        (int) p.L_Piece,
+        (int) p.TRI_Piece,      (int) p.L_Piece,        (int) p.Straight_Piece, (int) p.L_Piece,        (int) p.TRI_Piece,      (int) p.Straight_Piece, (int) p.L_Piece,       (int) p.TRI_Piece,      (int) p.L_Piece,        (int) p.Straight_Piece, (int) p.L_Piece,        (int) p.TRI_Piece,      (int) p.Straight_Piece, (int) p.L_Piece,
     };
 
     private Dictionary<int, Type> pieceLibrary = new Dictionary<int, Type>()

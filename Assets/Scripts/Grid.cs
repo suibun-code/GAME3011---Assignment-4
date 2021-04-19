@@ -42,7 +42,7 @@ public class Grid : MonoBehaviour
                 RectTransform rectTransform = newCell.GetComponent<RectTransform>();
                 rectTransform.anchoredPosition = new Vector3(j * 100f, i * 100f);
 
-                Debug.Log("I: " + i + " J: " + j);
+                //Debug.Log("I: " + i + " J: " + j);
 
                 allCells[j, i] = newCell.GetComponent<Cell>();
                 allCells[j, i].Setup(new Vector2Int(j, i), this);
