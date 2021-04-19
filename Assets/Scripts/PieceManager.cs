@@ -7,7 +7,9 @@ public class PieceManager : MonoBehaviour
 {
     public GameObject piecePrefab;
 
-    private List<Piece> lowDiff = null;
+    private List<Piece> piecesToPlace = null;
+
+    public int whichPieceOrder = 0;
 
     private enum p
     {
@@ -28,6 +30,18 @@ public class PieceManager : MonoBehaviour
         (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece
     };
 
+    private int[] pieceOrder2 = new int[64]
+    {
+        (int) p.TRI_Piece, (int) p.TRI_Piece, (int) p.TRI_Piece, (int) p.L_Piece, (int) p.TRI_Piece, (int) p.L_Piece, (int) p.TRI_Piece, (int) p.L_Piece,
+        (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.TRI_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.TRI_Piece, (int) p.Straight_Piece,
+        (int) p.Straight_Piece, (int) p.TRI_Piece, (int) p.TRI_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.END_PIECE, (int) p.TRI_Piece,
+        (int) p.TRI_Piece, (int) p.Straight_Piece, (int) p.L_Piece, (int) p.TRI_Piece, (int) p.Straight_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
+        (int) p.L_Piece, (int) p.START_PIECE, (int) p.TRI_Piece, (int) p.Straight_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece,
+        (int) p.TRI_Piece, (int) p.L_Piece, (int) p.Straight_Piece, (int) p.L_Piece, (int) p.TRI_Piece, (int) p.Straight_Piece, (int) p.L_Piece, (int) p.Straight_Piece,
+        (int) p.L_Piece, (int) p.TRI_Piece, (int) p.Straight_Piece, (int) p.Straight_Piece, (int) p.L_Piece, (int) p.TRI_Piece, (int) p.TRI_Piece, (int) p.L_Piece,
+        (int) p.TRI_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.L_Piece, (int) p.Straight_Piece, (int) p.L_Piece, (int) p.Straight_Piece, (int) p.L_Piece,
+    };
+
     private Dictionary<int, Type> pieceLibrary = new Dictionary<int, Type>()
     {
         {(int) p.L_Piece, typeof(Piece_L)},
@@ -39,16 +53,33 @@ public class PieceManager : MonoBehaviour
 
     public void Init(Grid grid)
     {
-        lowDiff = CreatePieces(grid);
+        piecesToPlace = CreatePieces(grid);
 
-        PlacePieces(lowDiff, grid);
+        PlacePieces(piecesToPlace, grid);
     }
 
     private List<Piece> CreatePieces(Grid grid)
     {
+        int[] pieceOrderToUse;
+
+        switch (whichPieceOrder)
+        {
+            case 0:
+                pieceOrderToUse = pieceOrder;
+                break;
+
+            case 1:
+                pieceOrderToUse = pieceOrder2;
+                break;
+
+            default:
+                pieceOrderToUse = pieceOrder;
+                break;
+        }
+
         List<Piece> newPieces = new List<Piece>();
 
-        for (int i = 0; i < pieceOrder.Length; i++)
+        for (int i = 0; i < pieceOrderToUse.Length; i++)
         {
             GameObject newPieceObject = Instantiate(piecePrefab);
             newPieceObject.transform.SetParent(transform);
@@ -56,7 +87,7 @@ public class PieceManager : MonoBehaviour
             newPieceObject.transform.localScale = new Vector3(1, 1, 1);
             newPieceObject.transform.localRotation = Quaternion.identity;
 
-            int key = pieceOrder[i];
+            int key = pieceOrderToUse[i];
             Type pieceType = pieceLibrary[key];
 
             Piece newPiece = (Piece)newPieceObject.AddComponent(pieceType);
@@ -72,9 +103,9 @@ public class PieceManager : MonoBehaviour
     {
         int num = 0;
 
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < Grid.cellSizeX; i++)
         {
-            for (int j = 0; j < 6; j++)
+            for (int j = 0; j < Grid.cellSizeY; j++)
             {
                 pieces[num].SetCell(grid.allCells[i, j]);
                 num++;

@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Grid : MonoBehaviour
 {
-    public static int cellSizeX = 6;
-    public static int cellSizeY = 6;
+    [SerializeField] public static int cellSizeX = 8;
+    [SerializeField] public static int cellSizeY = 8;
 
     public GameObject cellPrefab;
     public Cell[,] allCells = new Cell[cellSizeX, cellSizeY];
@@ -21,6 +21,8 @@ public class Grid : MonoBehaviour
 
                 RectTransform rectTransform = newCell.GetComponent<RectTransform>();
                 rectTransform.anchoredPosition = new Vector3(j * 100f, i * 100f);
+
+                //Debug.Log("I: " + i + " J: " + j);
 
                 allCells[j, i] = newCell.GetComponent<Cell>();
                 allCells[j, i].Setup(new Vector2Int(j, i), this);
