@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/HackingLevel.unity
+    guid: 9d2c498b0971c9c40a38a95c449cbb2f
+  - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -14,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 3.unity
     guid: 72eef516b7d4af24298b52885eeb8f29
+  - enabled: 1
+    path: Assets/Scenes/VictoryLevel.unity
+    guid: f53d313cbb888594c9175419c2aaa4a3
+  - enabled: 1
+    path: Assets/Scenes/LostLevel.unity
+    guid: 37bc3216a8f9eda46b2a95008c89c3aa
   m_configObjects: {}

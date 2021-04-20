@@ -47,15 +47,11 @@ public class Grid : MonoBehaviour
 
                 allCells[j, i] = newCell.GetComponent<Cell>();
 
-                //Debug.Log("I: " + i + " J: " + j);
-
                 if (count == cellSizeX)
                 {
                     num++;
                     count = 0;
                 }
-
-                Debug.Log(num);
 
                 if (num % 2 == 0)
                     allCells[j, i].GetComponent<Image>().color = new Color32(0, 198, 255, 120);

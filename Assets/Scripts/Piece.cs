@@ -139,6 +139,8 @@ public class Piece : MonoBehaviour
         {
             cell.currentPiece.connected = false;
         }
+
+        AudioManager.instance.sound.Play();
     }
 
     public void RotateCCW()

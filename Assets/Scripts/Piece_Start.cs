@@ -17,10 +17,6 @@ public class Piece_Start : Piece
         Piece pieceConnected = currentCell.grid.allCells[currentCell.gridPosition.x, currentCell.gridPosition.y + 1].currentPiece;
 
         if (pieceConnected.down == true)
-        {
             pieceConnected.connected = true;
-
-            Debug.Log("CONNECTED");
-        }
     }
 }
