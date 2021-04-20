@@ -1004,8 +1004,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4853740864903562189, guid: 044e2f7a88eb8c44f96c8131f337284c, type: 3}
       propertyPath: m_text
-      value: What is your hacking skill? This increases the amount of time you have
-        to hack.
+      value: Congratulations, you won!!! You can try again with a different hacking
+        skill.
       objectReference: {fileID: 0}
     - target: {fileID: 4853740864903562189, guid: 044e2f7a88eb8c44f96c8131f337284c, type: 3}
       propertyPath: m_fontColor.r
